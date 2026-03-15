@@ -1,180 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natalie Zachariah | Engineering & Project Management</title>
-    <style>
-        :root {
-            --primary: #1a2a6c;
-            --secondary: #f4f7f6;
-            --accent: #b21f1f;
-            --text: #333;
-            --white: #ffffff;
-        }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); background: var(--secondary); margin: 0; padding: 0; }
-        header { background: var(--primary); color: white; padding: 3rem 1rem; text-align: center; }
-        .container { max-width: 1000px; margin: auto; padding: 2rem; }
-        
-        h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
-        h2 { border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-top: 2rem; color: var(--primary); }
-        .subtitle { font-size: 1.2rem; opacity: 0.9; margin-bottom: 1rem; }
-        
-        .contact-links a { color: white; margin: 0 10px; text-decoration: none; border-bottom: 1px solid transparent; }
-        .contact-links a:hover { border-bottom: 1px solid white; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Natalie Zachariah | Engineering & Project Management</title>
 
-        /* Timeline Styles */
-        .timeline { position: relative; padding: 2rem 0; list-style: none; overflow: hidden; }
-        .timeline::before { content: ''; position: absolute; left: 50%; width: 2px; height: 100%; background: #ccc; transform: translateX(-50%); }
-        .timeline-item { position: relative; margin-bottom: 3rem; width: 50%; padding: 0 40px; box-sizing: border-box; }
-        .timeline-item:nth-child(odd) { float: left; text-align: right; }
-        .timeline-item:nth-child(even) { float: right; text-align: left; }
-        .timeline-item::after { content: ''; position: absolute; top: 10px; width: 20px; height: 20px; background: var(--primary); border-radius: 50%; z-index: 1; }
-        .timeline-item:nth-child(odd)::after { right: -10px; }
-        .timeline-item:nth-child(even)::after { left: -10px; }
-        
-        .timeline-content { background: var(--white); padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .timeline-date { font-weight: bold; color: var(--accent); display: block; margin-bottom: 0.5rem; }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        /* Card Styles */
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .card { background: var(--white); padding: 1.5rem; border-left: 5px solid var(--primary); border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
-        .card h3 { margin-top: 0; color: var(--primary); }
-        .card ul { padding-left: 20px; }
+<style>
+*{box-sizing:border-box}
 
-        .blog-section { background: #e9ecef; padding: 20px; border-radius: 8px; margin-top: 20px; }
-        .tag { display: inline-block; background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin: 2px; }
+body{
+font-family:'Inter',sans-serif;
+margin:0;
+background:#0a0a0a;
+color:#f5f5f5;
+}
 
-        .clear { clear: both; }
-        footer { text-align: center; padding: 3rem; background: var(--primary); color: white; margin-top: 4rem; }
-        
-        @media (max-width: 768px) {
-            .timeline::before { left: 20px; }
-            .timeline-item { width: 100%; text-align: left; padding-left: 50px; float: none; }
-            .timeline-item:nth-child(odd)::after, .timeline-item:nth-child(even)::after { left: 10px; }
-            .grid { grid-template-columns: 1fr; }
-        }
-    </style>
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:#000;
+border-bottom:1px solid #222;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav .logo{font-weight:700;font-size:18px;letter-spacing:.5px}
+
+nav a{
+margin-left:22px;
+text-decoration:none;
+color:#e5e5e5;
+font-weight:500;
+font-size:14px;
+}
+
+.hero{
+padding:120px 8% 100px 8%;
+background:#000;
+border-bottom:1px solid #222;
+}
+
+.hero h1{
+font-size:52px;
+margin-bottom:8px;
+}
+
+.hero h3{
+font-weight:500;
+color:#cfcfcf;
+margin-top:0;
+margin-bottom:22px;
+}
+
+.hero p{
+max-width:760px;
+font-size:18px;
+line-height:1.6;
+color:#d4d4d4;
+}
+
+.hero-buttons{margin-top:30px}
+
+.button{
+display:inline-block;
+padding:12px 22px;
+border-radius:8px;
+background:#fff;
+color:#000;
+font-weight:600;
+text-decoration:none;
+margin-right:14px;
+font-size:14px;
+}
+
+.button.secondary{
+background:transparent;
+border:1px solid #fff;
+color:#fff;
+}
+
+section{padding:90px 8%}
+
+h2{font-size:32px;margin-bottom:25px}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:28px;
+}
+
+.card{
+background:#111;
+padding:28px;
+border-radius:14px;
+border:1px solid #222;
+}
+
+.card h3{margin-top:0}
+
+.skills span{
+display:inline-block;
+background:#1a1a1a;
+margin:7px;
+padding:9px 16px;
+border-radius:22px;
+font-size:14px;
+}
+
+.timeline{
+position:relative;
+padding-left:30px;
+border-left:2px solid #444;
+}
+
+.timeline-item{
+margin-bottom:30px;
+}
+
+.timeline-item span{
+color:#aaa;
+font-size:14px;
+}
+
+footer{
+background:#000;
+border-top:1px solid #222;
+color:#aaa;
+padding:50px;
+text-align:center;
+}
+
+.tag{
+display:inline-block;
+background:#1a1a1a;
+padding:6px 12px;
+border-radius:6px;
+margin:4px;
+font-size:13px;
+color:#ddd;
+}
+
+.blog{
+background:#111;
+padding:25px;
+border-radius:14px;
+border:1px solid #222;
+margin-bottom:20px;
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>Natalie Zachariah</h1>
-    <p class="subtitle">Technical Project Manager | Systems Optimization & Engineering Leadership</p>
-    <div class="contact-links">
-        <a href="mailto:natzachariah@gmail.com">natzachariah@gmail.com</a> | 
-        <a href="tel:6144014509">(614) 401-4509</a> |
-        <a href="https://nez6.github.io/">Portfolio</a> |
-        <a href="https://linkedin.com/in/YOUR-PROFILE">LinkedIn</a>
-    </div>
-</header>
+<nav>
+<div class="logo">Natalie Zachariah</div>
+<div>
+<a href="#summary">Summary</a>
+<a href="#roadmap">Roadmap</a>
+<a href="#projects">Projects</a>
+<a href="#blog">Blog</a>
+<a href="#volunteering">Volunteering</a>
+<a href="#about">About</a>
+<a href="mailto:natzachariah@gmail.com" target="_blank">Email</a>
+</div>
+</nav>
 
-<div class="container">
-    
-    <section>
-        <h2>Professional Summary</h2>
-        <p>I am a detail-oriented Engineering Project Professional focused on the intersection of technical optimization, process design, and cross-functional leadership. With a foundation in leadership development and a track record of driving measurable efficiency gains, I specialize in bridging the gap between clinical/stakeholder needs and technical execution.</p>
-        <div class="tag">Agile / Scrum</div> <div class="tag">Process Optimization</div> <div class="tag">Jira Architecture</div> <div class="tag">Stakeholder Liaison</div> <div class="tag">Data Governance</div> <div class="tag">Systems Thinking</div>
-    </section>
+<section class="hero">
+<h1>Engineering & Technical Project Management</h1>
+<h3>Systems Optimization • Agile Delivery • Cross‑Functional Leadership</h3>
+<p>
+I am a detail‑oriented Engineering Project Professional focused on the intersection of technical optimization, process design, and cross‑functional leadership. I specialize in bridging the gap between stakeholder needs and technical execution.
+</p>
 
-    <section>
-        <h2>Career Roadmap & Milestones</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date">2023 - 2026</span>
-                    <h3>Leadership Development Program</h3>
-                    <p><strong>Daimler Truck North America</strong></p>
-                    <p>Completed a 2.5-year rotational intensive focused on corporate strategy, operational engineering, and technical project delivery.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date">March 2026</span>
-                    <h3>SWE Delegate & Career Transition</h3>
-                    <p>Focusing on technical project management within highly regulated industries (Healthcare & Manufacturing).</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date">Mid - Late 2026</span>
-                    <h3>Certification Target</h3>
-                    <p>Professional Scrum Master (PSM) & PMP Certification to formalize advanced Agile and Program Leadership capabilities.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date">2028</span>
-                    <h3>Advanced Education</h3>
-                    <p>Master's in Artificial Intelligence focused on ML models and clinical decision systems.</p>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </section>
+<div class="hero-buttons">
+<a class="button" href="#summary">Professional Summary</a>
+<a class="button secondary" href="#projects">Selected Work</a>
+</div>
+</section>
 
-    <section>
-        <h2>Strategic Impact & Selected Work</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Workflow Optimization</h3>
-                <p><strong>Impact: Saved 120 Engineering Hours</strong></p>
-                <p>Identified bottlenecks in technical processes. Implemented data-driven decision matrices and automation that reduced manual engineering overhead significantly.</p>
-            </div>
-            <div class="card">
-                <h3>Systems Architecture & Jira</h3>
-                <p>Developed custom Jira project frameworks. Managed full project lifecycle from <strong>Gantt-based planning</strong> to formal stakeholder hand-off and system transition.</p>
-            </div>
-            <div class="card">
-                <h3>Culture & Belonging Champion</h3>
-                <p>Spearheaded cross-functional initiatives and corporate events as a liaison between executive leadership and technical resource groups.</p>
-            </div>
-            <div class="card">
-                <h3>Healthcare Interoperability</h3>
-                <p>Research and case studies on FHIR APIs and data exchange standards to improve patient outcomes through modern analytics.</p>
-            </div>
-        </div>
-    </section>
+<section id="summary">
+<h2>Professional Summary</h2>
+<p>
+With a foundation in leadership development and a track record of driving measurable efficiency gains, I bring a systems‑thinking approach to engineering and project management. My work centers on optimizing workflows, improving cross‑team communication, and enabling data‑driven decision‑making.
+</p>
 
-    <section>
-        <h2>Thought Leadership (Blog)</h2>
-        <div class="blog-section">
-            <h3>The Rotational Advantage: Systemic Empathy</h3>
-            <p>Rotational programs develop the ability to see how a technical change in one department impacts the bottom line of another. I lead with "Systemic Empathy"—translating high-level strategy into actionable technical requirements.</p>
-        </div>
-        <div class="blog-section" style="margin-top:10px;">
-            <h3>Efficiency as a Culture</h3>
-            <p>I view process friction as technical debt. By standardizing agility and using metrics like the 120-hour saving milestone, we allow engineers to focus on high-value design rather than coordination overhead.</p>
-        </div>
-    </section>
+<div>
+<span class="tag">Agile / Scrum</span>
+<span class="tag">Process Optimization</span>
+<span class="tag">Jira Architecture</span>
+<span class="tag">Stakeholder Liaison</span>
+<span class="tag">Data Governance</span>
+<span class="tag">Systems Thinking</span>
+</div>
+</section>
 
-    <section>
-        <h2>Community & Volunteering</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Society of Women Engineers</h3>
-                <p>Active member advocating for diversity and technical leadership in STEM careers.</p>
-            </div>
-            <div class="card">
-                <h3>Yoga & Seniors Wellness</h3>
-                <p>Provide free yoga and dance classes for elderly community members to support mobility and social engagement.</p>
-            </div>
-            <div class="card">
-                <h3>STEM & FIRST Robotics</h3>
-                <p>Supporting education initiatives that encourage students to explore engineering and innovation.</p>
-            </div>
-        </div>
-    </section>
+<section id="roadmap">
+<h2>Career Roadmap & Milestones</h2>
 
-    <section>
-        <h2>About Me</h2>
-        <p>Outside of engineering optimization, I am a dedicated pet owner (raising my labradoodle, Buster) and an outdoor enthusiast. Whether hiking, practicing yoga, or exploring nature, I bring the same energy and curiosity to my personal life as I do to my professional projects. My values center on staying curious, working hard, and using technology to contribute to meaningful change.</p>
-    </section>
+<div class="timeline">
 
+<div class="timeline-item">
+<h3>Leadership Development Program</h3>
+<span>2023 – 2026</span>
+<p style="color:#ccc">Completed a 2.5‑year rotational intensive at Daimler Truck North America focused on corporate strategy, operational engineering, and technical project delivery.</p>
 </div>
 
+<div class="timeline-item">
+<h3>SWE Delegate & Career Transition</h3>
+<span>March 2026</span>
+<p style="color:#ccc">Transitioning into technical project management roles within highly regulated industries including healthcare and manufacturing.</p>
+</div>
+
+<div class="timeline-item">
+<h3>Certification Targets</h3>
+<span>Mid – Late 2026</span>
+<p style="color:#ccc">Professional Scrum Master (PSM) and PMP certification to formalize advanced Agile and program leadership capabilities.</p>
+</div>
+
+<div class="timeline-item">
+<h3>Master's in Artificial Intelligence</h3>
+<span>2028</span>
+<p style="color:#ccc">Graduate education focused on machine learning models and clinical decision systems.</p>
+</div>
+
+</div>
+</section>
+
+<section id="projects">
+<h2>Strategic Impact & Selected Work</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Workflow Optimization</h3>
+<p><strong>Impact: Saved 120 Engineering Hours</strong></p>
+<p>Identified bottlenecks in technical processes and implemented automation and decision matrices that significantly reduced manual engineering overhead.</p>
+</div>
+
+<div class="card">
+<h3>Systems Architecture & Jira</h3>
+<p>Developed custom Jira project frameworks and managed full project lifecycle from Gantt‑based planning to stakeholder hand‑off.</p>
+</div>
+
+<div class="card">
+<h3>Culture & Belonging Champion</h3>
+<p>Led cross‑functional initiatives and corporate events as a liaison between executive leadership and technical resource groups.</p>
+</div>
+
+<div class="card">
+<h3>Healthcare Interoperability Research</h3>
+<p>Conducted research on FHIR APIs and healthcare data exchange standards to support improved patient outcomes through modern analytics.</p>
+</div>
+
+</div>
+</section>
+
+<section id="blog">
+<h2>Thought Leadership</h2>
+
+<div class="blog">
+<h3>The Rotational Advantage: Systemic Empathy</h3>
+<p>Rotational programs build the ability to understand how technical changes impact the broader organization. I lead with “Systemic Empathy”—translating strategy into actionable technical requirements.</p>
+</div>
+
+<div class="blog">
+<h3>Efficiency as a Culture</h3>
+<p>I view process friction as technical debt. By standardizing agility and using metrics like the 120‑hour saving milestone, engineers can focus on high‑value design rather than coordination overhead.</p>
+</div>
+
+</section>
+
+<section id="volunteering">
+<h2>Community & Volunteering</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Society of Women Engineers</h3>
+<p>Active member advocating for diversity and technical leadership in STEM careers.</p>
+</div>
+
+<div class="card">
+<h3>Yoga & Seniors Wellness</h3>
+<p>Provide free yoga and dance classes for elderly community members to support mobility and social engagement.</p>
+</div>
+
+<div class="card">
+<h3>STEM & FIRST Robotics</h3>
+<p>Support education initiatives encouraging students to explore engineering and innovation.</p>
+</div>
+
+</div>
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+<p>
+Outside of engineering optimization, I am a dedicated pet owner and outdoor enthusiast. Whether hiking, practicing yoga, or exploring nature with my dog Buster, I bring curiosity, energy, and purpose to everything I do.
+</p>
+</section>
+
 <footer>
-    <p>&copy; 2026 Natalie Zachariah | Driven by Data. Led by Insight.</p>
+<p>© 2026 Natalie Zachariah | Driven by Data. Led by Insight.</p>
 </footer>
 
 </body>
