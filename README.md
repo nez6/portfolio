@@ -1,2 +1,3 @@
-# portfolio
-This is a general portfolio for tier 2 jobs
+# Portfolio
+
+This is a general portfolio highlighting my general skills and work experience. 
